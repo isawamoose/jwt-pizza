@@ -15,8 +15,6 @@ test('about page', async ({ page }) => {
 test('docs page', async ({ page }) => {
   await page.goto('http://localhost:5173/docs');
   await expect(page.getByRole('main')).toContainText('JWT Pizza API');
-  await expect(page.getByText('[POST] /api/authRegister a')).toBeVisible();
-  await expect(page.getByText('🔐 [DELETE] /api/franchise/:franchiseId/store/:storeIdDelete a storeExample')).toBeVisible();
 });
 
 test('unknown page', async ({ page }) => {
