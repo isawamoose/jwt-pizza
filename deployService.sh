@@ -18,6 +18,7 @@ printf "\n----> Deploying $service to $hostname with $key\n"
 # Step 1
 printf "\n----> Build the distribution package\n"
 npm run build
+echo "{\"version\":\"$(date +"%Y%m%d.%H%M%S")\" }" > dist/version.json
 
 # Step 2
 printf "\n----> Clearing out previous distribution on the target\n"

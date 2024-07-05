@@ -12,3 +12,4 @@ coverage
 /blob-report/
 /playwright/.cache/
 .nyc_output
+dist
