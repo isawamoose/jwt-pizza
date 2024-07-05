@@ -138,8 +138,6 @@ test('purchase with login', async ({ page }) => {
 
   // Create order
   await expect(page.locator('h2')).toContainText('Awesome is a click away');
-  await page.goto('http://localhost:5173/');
-  await page.getByRole('button', { name: 'Order now' }).click();
   await page.getByRole('combobox').selectOption('4');
   await page.getByRole('link', { name: 'Image Description Veggie A' }).click();
   await page.getByRole('link', { name: 'Image Description Pepperoni' }).click();
