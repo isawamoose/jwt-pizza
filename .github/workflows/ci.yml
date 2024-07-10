@@ -65,7 +65,6 @@ jobs:
   release:
     needs:
       - build
-      - deploy
     runs-on: ubuntu-latest
     steps:
       - name: Create Release
