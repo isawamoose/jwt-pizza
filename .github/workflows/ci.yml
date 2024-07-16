@@ -14,11 +14,11 @@ jobs:
   build:
     name: Build frontend and deploy
     runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.set_version.outputs.version }}
     environment:
       name: production
       url: https://stephenspizza.roadmapp.dev
+    outputs:
+      version: ${{ steps.set_version.outputs.version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
