@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.set_version.outputs.version }}
+    environment:
+      name: production
+      url: https://stephenspizza.roadmapp.dev
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
