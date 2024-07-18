@@ -12,7 +12,6 @@ permissions:
 
 jobs:
   build:
-    name: Build frontend and deploy
     runs-on: ubuntu-latest
 
     outputs:
@@ -42,7 +41,7 @@ jobs:
 
       - name: Update coverage and version
         run: |
-          printf '{"version": "%s" }' ${{steps.set_version.outputs.version}} > src/version.json
+          printf '{"version": "%s" }' ${{steps.set_version.outputs.version}} > public/version.json
           coverage_pct=$(grep -o '"pct":[0-9.]*' coverage/coverage-summary.json | head -n 1 | cut -d ':' -f 2)
           color=$(echo "$coverage_pct < 80" | bc -l | awk '{if ($1) print "yellow"; else print "green"}')
           sed -i "s/^Coverage: .*/Coverage: $coverage_pct %/" README.md
