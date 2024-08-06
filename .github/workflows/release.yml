@@ -52,3 +52,7 @@ jobs:
             ## 🚀 Description
 
             ${{ github.event.inputs.description }}
+
+      - name: Annotate deployment in Grafana
+        run: |
+          curl -s -X POST https://isawamoose.grafana.net/api/annotations -H "Authorization: Bearer ${{ secrets.GRAFANA_ACCESS_TOKEN }}" -H "Content-Type:application/json" -d '{"dashboardUID":"bdnsh7ukznv28f", "panelId":22, "text":"Version '"${{ env.version }}"' deployed" }'
